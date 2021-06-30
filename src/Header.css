@@ -1,0 +1,227 @@
+.container {
+    padding: 0 200px;
+    min-height: calc(100% - (60px + 300px + 50px));
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.header .top-nav {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+}
+.header .top-nav .btn-toggle {
+    display: none;
+}
+
+.header .top-nav ul {
+    padding: 0;
+    margin: 0;
+}
+.header .top-nav ul li {
+    display: inline-block;
+}
+.header .top-nav ul .logo {
+    height: 60px;
+}
+.header .top-nav ul .logo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.header .top-nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+
+    color: rgb(145, 145, 145);
+    transition: all 0.3s;
+}
+.header .top-nav ul li a:hover {
+    color: #8bd8bd;
+}
+
+/* Start Left Menu */
+.header .top-nav .left .menu {
+    display: flex;
+    align-items: center;
+}
+.header .top-nav .left ul li {
+    margin-right: 30px;
+}
+
+/* Start Right Menu */
+.header .top-nav .right ul li {
+    margin-left: 20px;
+}
+.header .top-nav .right ul li a {
+    font-size: 20px;
+}
+.header .top-nav .right ul .notify {
+    position: relative;
+}
+.header .top-nav .right ul .notify span {
+    position: absolute;
+    right: -100%;
+    top: -50%;
+
+    padding: 1px 7px;
+    border-radius: 50%;
+
+    color: #fff;
+    background-color: #8bd8bd;
+}
+.header .top-nav .right ul .icon-search {
+    display: none;
+    color: rgb(145, 145, 145);
+}
+.header .top-nav .right ul .input-search {
+    margin-right: 10px;
+}
+.header .top-nav .right ul .input-search input {
+    width: 300px;
+
+    padding: 10px 20px;
+    border: 2px solid #eee;
+}
+.header .top-nav .right ul .input-search input:focus {
+    width: 300px;
+
+    padding: 10px 20px;
+    border: 2px solid #8bd8bd;
+    outline: none;
+}
+/* End Right Menu */
+
+/* Responsive */
+@media all and (max-width: 990px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Start Top Nav */
+    .header .top-nav {
+        width: 90%;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        position: relative;
+    }
+    .header .top-nav .btn-toggle {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 40px;
+        transform: translateY(-50%);
+    }
+    .header .top-nav .btn-toggle::after {
+        position: absolute;
+        content: "";
+        width: 26px;
+        height: 26px;
+        top: 0;
+        left: 0;
+    }
+    .header .top-nav .btn-toggle:hover {
+        cursor: pointer;
+    }
+    .header .top-nav .btn-toggle svg {
+        font-size: 30px;
+        color: #8bd8bd;
+    }
+    .header .top-nav ul li a {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    /* End Top Nav */
+
+    /* Start Left Menu */
+    .header .top-nav .left {
+        height: 60px;
+        padding: 0;
+        overflow: hidden;
+
+        transition: all 0.3s;
+    }
+
+    .header .top-nav .left .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header .top-nav .left .menu .logo {
+        margin-top: 0;
+    }
+    .header .top-nav .left ul li {
+        margin: 10px 0;
+    }
+    .header .top-nav .left ul a {
+        font-weight: 500;
+    }
+    /* End Left Menu */
+
+    /* Start Right Menu */
+    .header .top-nav .right {
+        position: absolute;
+        top: 25px;
+        right: 50%;
+        transform: translateX(50%);
+        background-color: transparent;
+    }
+    .header .top-nav .right ul {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .header .top-nav .right ul .notify span {
+        top: -30%;
+    }
+    .header .top-nav .right ul li {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .header .top-nav .right ul li:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .header .top-nav .right ul .icon-search {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .header .top-nav .right ul .input-search {
+        width: 100%;
+        margin-right: -5px;
+
+        position: absolute;
+        top: 125%;
+        left: 50%;
+        z-index: 999;
+        transform: translateX(-50%);
+
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+        transition: visibility 0.2s, opacity 0.2s linear;
+    }
+    .header .top-nav .right ul .active-search {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header .top-nav .right ul .input-search input {
+        width: 0;
+        padding: 0;
+        border: none;
+
+        transition: all 0.3s;
+    }
+
+    /* End Right Menu */
+}
+/* End Responsive */

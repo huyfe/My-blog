@@ -1,0 +1,17 @@
+#footer {
+    width: 100%;
+    height: 50px;
+
+    background-color: #8bd8bd;
+}
+#footer .content-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#footer .content-center a {
+    color: #fff;
+    text-decoration: none;
+}
